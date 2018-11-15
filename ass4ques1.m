@@ -1,0 +1,14 @@
+clc;
+clear all;
+close all;
+syms t;
+syms w;
+x=piecewise((-.5<=t<=.5),1,0);
+subplot(2,1,1);
+fplot(x);
+f=x.*exp((-1i)*2*pi*t*w);
+q=int(f,t,-.5,.5);
+t=-1:0.01:1;
+subplot(2,1,2);
+grid on;
+fplot(q);
